@@ -1,0 +1,163 @@
+/* MENU */
+/* Menu position & size */
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 100%;
+  background-color: var(--grey);
+}
+
+/* HAMBUGER - create, position & style */
+/* Toggler position & size */
+.menu .toggler {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+
+/* hamburger position & size */
+.menu .burger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* create middle line */
+.burger-line {
+  position: absolute;
+  height: 3px;
+  width: 40px;
+  background-color: var(--dark-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+/* create top & bottom */
+.burger-line::before,
+.burger-line::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 40px;
+  top: 10px;
+  background: inherit;
+  flex-shrink: 0;
+}
+
+/* position top line */
+.burger-line::before {
+  top: -10px;
+}
+
+/* HAMBURGER - Animations */
+/* rotate when checked */
+.menu .toggler:checked+.burger>div {
+  transform: rotate(-135deg);
+}
+
+/* transform to X when checked */
+.menu .toggler:checked+.burger>div::before,
+.menu .toggler:checked+.burger>div::after {
+  top: 0;
+  transform: rotate(-90deg);
+}
+
+/* MENU TOP - Create & Style */
+.menu-top {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--dark-grey);
+  font-size: 1.5rem;
+}
+
+.menu-top li a:hover {
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* This creates a psudo element (:after) below each link with BOLD
+content (data-text) from index.html to preserve space and prevent
+the links shifting on :hover */
+.menu-top a::after {
+  display: block;
+  content: attr(data-text);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.menu-top li {
+  display: inline-block;
+  padding: 0 8px;
+}
+
+/* MENU SIDE - Create & Style */
+.menu-side {
+  position: absolute;
+  right: -175px;
+  height: 100vh;
+  width: 175px;
+  background-color: var(--grey);
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.menu-side li {
+  list-style: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.menu-side li:hover {
+  background-color: var(--light-grey)
+}
+
+/* MENU SIDE - ANIMATE */
+.menu .toggler:checked~.menu-side {
+  transform: translateX(-175px);
+}
+
+/* MEDIA */
+/* HIDE Burger & Toggler on LGE screen */
+.menu .burger,
+.menu .toggler {
+  visibility: hidden;
+}
+
+/* SML screen hide top menu */
+@media screen and (max-width: 1000px) {
+
+  .menu .burger,
+  .menu .toggler {
+    visibility: visible;
+  }
+  .menu-top {
+    visibility: hidden;
+  }
+
+}

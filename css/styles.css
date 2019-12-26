@@ -1,5 +1,9 @@
-.root
-
+/* Define colors */
+:root {
+  --grey: #ddd;
+  --light-grey: #eee;
+  --dark-grey: #666;
+}
 /* Remove padding & margin for consistency */
 * {
   margin: 0;
@@ -7,5 +11,29 @@
 }
 
 body {
-  background-color: #eee;
+  background-color: var(--light-grey);
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 800px;
+  height: 100vh;
+  margin-top: 60px;
+}
+
+.main p {
+  margin: 2rem;
+}
+
+.icon-div {
+  position: absolute;
+  background-color: var(--dark-grey);
+  width: 150px;
+  margin: 10px;
+  padding: 10px
 }

@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- style sheet -->
+  <!-- style sheets -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/menu.css">
   <title>top menu hamburger</title>
 </head>
 
@@ -12,16 +13,33 @@
 
   <!-- Menu Section -->
   <div class="menu">
+<div class="icon-div">
+  <p class="icon-text">PLACE HOLDER</p>
+</div>
     <input type="checkbox" class="toggler">
     <div class="burger">
       <div class="burger-line"></div>
     </div>
-    <ul class="menu-top">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+
+    <!-- Navbar -->
+    <div class="menu-top">
+      <ul>
+        <li><a href="#" data-text="Home">Home</a></li>
+        <li><a href="#" data-text="Services">Services</a></li>
+        <li><a href="#" data-text="About">About</a></li>
+        <li><a href="#" data-text="Contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="menu-side">
+      <ul>
+        <li><a href="#" data-text="Home">Home</a></li>
+        <li><a href="#" data-text="Services">Services</a></li>
+        <li><a href="#" data-text="About">About</a></li>
+        <li><a href="#" data-text="Contact">Contact</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- Main Section -->
@@ -30,7 +48,7 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio delectus dolorem cumque debitis ea quos totam, illum atque, distinctio corporis fugiat iste enim quasi dolor.</p>
 
   </div>
-  
+
 </body>
 
 </html>
