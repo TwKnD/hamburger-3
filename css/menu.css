@@ -118,13 +118,14 @@ the links shifting on :hover */
 /* MENU SIDE - Create & Style */
 .menu-side {
   position: absolute;
-  right: -175px;
+  right: 0;
   height: 100vh;
-  width: 175px;
+  width: 0;
+  overflow: hidden;
   background-color: var(--grey);
   display: flex;
   justify-content: center;
-  transition: transform 0.5s ease;
+  transition: width 0.5s ease;
 }
 
 .menu-side li {
@@ -137,10 +138,6 @@ the links shifting on :hover */
   background-color: var(--light-grey)
 }
 
-/* MENU SIDE - ANIMATE */
-.menu .toggler:checked~.menu-side {
-  transform: translateX(-175px);
-}
 
 /* MEDIA */
 /* HIDE Burger & Toggler on LGE screen */
@@ -151,7 +148,10 @@ the links shifting on :hover */
 
 /* SML screen hide top menu */
 @media screen and (max-width: 1000px) {
-
+/* MENU SIDE - ANIMATE */
+.menu .toggler:checked~.menu-side {
+  width: 175px;
+}
   .menu .burger,
   .menu .toggler {
     visibility: visible;
